@@ -4,9 +4,11 @@ var webpack = require('webpack');
 
 var rules = [
   {
-    test: /\.js$/,
-    use: ['babel-loader'],
+    test: /\.(js|jsx)$/,
     exclude: /node_modules/,
+    use: [{
+      loader: 'babel-loader'
+    }],
   },
   {
     test: /\.css$/,
@@ -31,6 +33,7 @@ var rules = [
     use: ['style-loader', 'raw-loader'],
   },
 ];
+
 
 module.exports = [{
   entry: './src/RichTextEditor.js',
